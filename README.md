@@ -1,1 +1,3 @@
-#Libft primer proyecto de 42 cursus
+#README.md general del git 
+
+42 cursus y 42 piscine
