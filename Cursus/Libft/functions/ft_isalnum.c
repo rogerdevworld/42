@@ -1,3 +1,6 @@
+//ftlib ft_isalnum
+#include "libft.h"
+
 int	isalnum(int c)
 {
 	if ((c >= 'a' && c <= 'z') ||
