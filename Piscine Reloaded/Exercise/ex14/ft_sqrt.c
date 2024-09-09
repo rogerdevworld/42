@@ -12,29 +12,19 @@
 
 int	ft_sqrt(int nb)
 {
-	long	index;
-	long	b;
+	int	index;
 
-	b = nb;
-	if (b <= 0)
-	{
+	if (nb <= 0)
 		return (0);
-	}
-	if (b == 1)
-	{
-		return (1);
-	}
+	if (nb == 1 || nb == 0)
+		return (nb);
 	index = 2;
-	if (b >= 2)
+	while (index * index <= nb)
 	{
-		while (index * index <= b)
-		{
-			if (index * index == b)
-			{
-				return (index);
-			}
-			index++;
-		}
+		if (index * index == nb)
+			return (index);
+		index++;
 	}
 	return (0);
 }
+//printf("%i", index * index);
