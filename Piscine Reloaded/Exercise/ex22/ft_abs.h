@@ -6,12 +6,13 @@
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 19:53:06 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/09 19:55:49 by rmarrero         ###   ########.fr       */
+/*   Updated: 2024/09/09 21:36:39 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef UTILS_H
-#define UTILS_H
 
-#define ABS(x) ((x) < 0 ? -(x) : (x))
+#ifndef FT_ABS_H
+# define FT_ABS_H
+
+# define ABS(Value) (((Value) < 0) * (-(Value)) + ((Value) >= 0) * (Value))
 
 #endif

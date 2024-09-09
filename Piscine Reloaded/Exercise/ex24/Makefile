@@ -1,7 +1,8 @@
 #makefile 024
 
 #variables
-SRC = srcs/ft_putchar.c srcs/ft_putstr.c srcs/ft_strcmp.c srcs/ft_strlen.c srcs/ft_swap.c
+SRC_DIR = srcs
+SRC = $(wildcard $(SRC_DIR)/*.c)
 OBJS = $(SRC:.c=.o)
 NAME = libft.a
 CC = cc
