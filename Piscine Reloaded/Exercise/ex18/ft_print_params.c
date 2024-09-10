@@ -6,15 +6,11 @@
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 17:32:13 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/09 17:56:21 by rmarrero         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:05:53 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+void	ft_putchar(char c);
 
 int	main(int argc, char **argv)
 {

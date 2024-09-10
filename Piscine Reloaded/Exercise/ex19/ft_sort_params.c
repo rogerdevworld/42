@@ -6,7 +6,7 @@
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 17:57:40 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/09 19:52:35 by rmarrero         ###   ########.fr       */
+/*   Updated: 2024/09/10 10:19:05 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,23 @@ int	ft_strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
+void	swap(char **a, char **b)
+{
+	char temp;
+
+	tem = *a;
+	*a = *b;
+	*b = tem;
+}
+
+
+void	ft_print_args()
+{
+	while ()
+	{
+		ft_putchar()
+	}
+}
 int	main(itn agrc, char **argv)
 {
 	int	i;
@@ -33,4 +50,4 @@ int	main(itn agrc, char **argv)
 	if (argc > 1)
 	{
 
-
+	}

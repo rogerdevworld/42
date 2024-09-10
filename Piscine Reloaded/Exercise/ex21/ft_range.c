@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/12 17:28:22 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/10 16:04:31 by rmarrero         ###   ########.fr       */
+/*   Created: 2024/09/10 19:15:05 by rmarrero          #+#    #+#             */
+/*   Updated: 2024/09/10 19:18:15 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
+#include <stdlib.h>
 
-void	putchar(char c);
-
-void	ft_putstr(char *str)
+int	*ft_range(int min, int max)
 {
 	int	i;
+	int	*range;
 
+	if (min >= max)
+		return (NULL);
+	range = (int *)malloc((max - min) * sizeof(int));
+	if (!range)
+		return (NULL);
 	i = 0;
-	while (str[i] != '\0')
+	if (max >= i)
 	{
-		ft_purchar(str[i]);
+		range[i] = min++;
 		i++;
 	}
+	return (range);
 }
