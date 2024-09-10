@@ -6,7 +6,7 @@
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 19:15:05 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/10 19:18:15 by rmarrero         ###   ########.fr       */
+/*   Updated: 2024/09/10 19:29:12 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -23,7 +23,7 @@ int	*ft_range(int min, int max)
 	if (!range)
 		return (NULL);
 	i = 0;
-	if (max >= i)
+	while (max >= i)
 	{
 		range[i] = min++;
 		i++;
