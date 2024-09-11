@@ -3,14 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_params.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aybelhaj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/09 17:57:40 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/10 10:19:05 by rmarrero         ###   ########.fr       */
+/*   Created: 2024/09/10 18:51:02 by aybelhaj          #+#    #+#             */
+/*   Updated: 2024/09/11 10:56:31 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	putchar(char c);
+void	ft_putchar(char c);
+
+void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+}
 
 int	ft_strcmp(char *s1, char *s2)
 {
@@ -24,30 +36,43 @@ int	ft_strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
-void	swap(char **a, char **b)
+void	ft_swap(int argc, char **argv)
 {
-	char temp;
+	int		i;
+	char	*temp;
+	int		size;
 
-	tem = *a;
-	*a = *b;
-	*b = tem;
-}
-
-
-void	ft_print_args()
-{
-	while ()
+	size = argc;
+	while (size > 1)
 	{
-		ft_putchar()
+		i = 1;
+		while (i < size - 1)
+		{
+			if (ft_strcmp(argv[i], argv[i + 1]) > 0)
+			{
+				temp = argv[i];
+				argv[i] = argv[i + 1];
+				argv[i + 1] = temp;
+			}
+			i++;
+		}
+		size--;
 	}
 }
-int	main(itn agrc, char **argv)
+
+int	main(int argc, char **argv)
 {
 	int	i;
-	int	j;
 
-	j = 1;
-	if (argc > 1)
+	if (argc < 2)
+		return (0);
+	ft_swap(argc, argv);
+	i = 1;
+	while (i < argc)
 	{
-
+		ft_putstr(argv[i]);
+		ft_putchar('\n');
+		i++;
 	}
+	return (0);
+}

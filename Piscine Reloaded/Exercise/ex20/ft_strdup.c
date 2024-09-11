@@ -36,15 +36,15 @@ char	*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-char	*ft_strdup(char *s)
+char	*ft_strdup(char *src)
 {
 	size_t	len;
 	char	*duplicado;
 
-	len = ft_strlen(s);
+	len = ft_strlen(src);
 	duplicado = (char *)malloc((len + 1) * sizeof(char));
 	if (!duplicado)
 		return (NULL);
-	ft_strcpy(duplicado, s);
+	ft_strcpy(duplicado, src);
 	return (duplicado);
 }

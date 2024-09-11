@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 13:03:43 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/11 12:47:34 by rmarrero         ###   ########.fr       */
+/*   Created: 2024/09/11 11:00:32 by rmarrero          #+#    #+#             */
+/*   Updated: 2024/09/11 11:00:39 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#ifndef FT_POINT_H
 
-void	ft_putchar(char c);
+# define FT_POINT_H
 
-void	ft_print_numbers(void)
+typedef struct s_point
 {
-	char	numbers;
+	int	x;
+	int	y;
+}	t_point;
 
-	numbers = '0';
-	while (numbers <= '9')
-	{
-		ft_putchar(numbers);
-		numbers++;
-	}
-}
+void	set_point(t_point *point);
+
+#endif
