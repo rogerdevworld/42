@@ -1,19 +1,22 @@
-//libft ft_strlcpy
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/12 17:56:18 by rmarrero          #+#    #+#             */
+/*   Updated: 2024/09/12 17:58:51 by rmarrero         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 
-int	ft_strlen(char *str)
-{
-	int length;
-	
-	while (str[length])
-		length++;
-	return (length);
-}
+size_t	ft_strlen(const char *str);
 
-unsigned int ft_strlcpy(char *dest, char *src, unsigne int size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t	size)
 {
-	unsigned int i;
-	unsigned int length_src;
+	size_t	i;
+	size_t	length_src;
 
 	i = 0;
 	length_src = ft_strlen(src);

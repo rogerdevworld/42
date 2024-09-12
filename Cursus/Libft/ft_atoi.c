@@ -6,17 +6,16 @@
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 18:38:41 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/12 01:19:42 by rmarrero         ###   ########.fr       */
+/*   Updated: 2024/09/12 17:32:02 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-//libft ft_atoi
 #include "libft.h"
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
-	unsigned long int	result;
+	int		sign;
+	size_t	i;
+	int		result;
 
 	i = 0;
 	sign = 1;

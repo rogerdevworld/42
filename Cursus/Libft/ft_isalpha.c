@@ -6,16 +6,15 @@
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 18:52:42 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/11 18:52:50 by rmarrero         ###   ########.fr       */
+/*   Updated: 2024/09/12 17:34:02 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-//isalpha libft
 #include "libft.h"
 
 int	ft_isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
-	else 
+	else
 		return (0);
 }
