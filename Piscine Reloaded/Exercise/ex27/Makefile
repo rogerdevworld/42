@@ -11,7 +11,7 @@ $(NAME):$(OBJS)
 clean:
 	$(RM) *.o
 
-fclean:
+fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
