@@ -6,21 +6,12 @@
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 18:43:29 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/11 18:43:31 by rmarrero         ###   ########.fr       */
+/*   Updated: 2024/09/13 12:35:49 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-//strlcat libft
-
-int	ft_strlen(char *str)
-{
-	int	length;
-
-	length = 0;
-	while (str[length])
-		length++;
-	return (length);
-}
+int	ft_strlen(char *str);
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {

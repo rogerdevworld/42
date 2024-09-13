@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/13 06:48:32 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/13 12:39:45 by rmarrero         ###   ########.fr       */
+/*   Created: 2024/09/13 12:40:32 by rmarrero          #+#    #+#             */
+/*   Updated: 2024/09/13 15:25:08 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t				i;
-	unsigned char		*local_dest;
-	const unsigned char	*local_src;
+	const unsigned char	local_s;
+	size_t	i;
 
-	local_dest = (unsigned char *)dest;
-	local_src = (const unsigned char *)src;
-	if (local_dest == local_src)
-		return (dest);
-	if (local_dest < local_src)
+	i = 0;
+	local_s = (const unsigned char *)s;
+	while (local_s[i])
 	{
-		i = 0;
-		while (i < n)
-		{
-			local_dest[i] = local_src[i];
-			i++;
-		}
+		if (local_s[i] == (unsigned char)c)
+			return (s);
+		i++;
 	}
-	else
-	{
-		while (n--)
-			local_dest[n] = local_src[n];
-	}
-	return (dest);
+	return (NULL);
 }

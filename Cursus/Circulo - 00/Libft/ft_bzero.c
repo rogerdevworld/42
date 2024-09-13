@@ -6,10 +6,9 @@
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 18:38:10 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/11 18:38:14 by rmarrero         ###   ########.fr       */
+/*   Updated: 2024/09/13 15:24:28 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
@@ -17,7 +16,7 @@ void	ft_bzero(void *s, size_t n)
 	size_t	i;
 	char	*str;
 
-	str = s;
+	str = (char *)s;
 	i = 0;
 	while (i < n)
 	{
