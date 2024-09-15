@@ -6,14 +6,14 @@
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 18:01:25 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/12 18:07:09 by rmarrero         ###   ########.fr       */
+/*   Updated: 2024/09/15 17:12:40 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stddef.h>
 # include <unistd.h>
-# include <strio.h>
+# include <stdio.h>
 
 //void functions
 void	*ft_memset(void *ptr, int value, size_t num);

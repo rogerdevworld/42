@@ -1,30 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/10 15:46:22 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/12 17:41:12 by rmarrero         ###   ########.fr       */
+/*   Created: 2024/08/19 17:02:41 by rmarrero          #+#    #+#             */
+/*   Updated: 2024/08/19 17:29:13 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
-#include <stdlib.h>
 
-size_t	ft_strlen(const char *str);
-
-char	*ft_strcpy(char *dest, char *src);
-
-char	*ft_strdup(const char *s, size_t n)
+int	ft_strlen(char *str)
 {
-	size_t	len;
-	char	*duplicado;
+	int	len;
 
-	len = ft_strlen(src);
-	duplicado = (char *)malloc((len + 1) * sizeof(char));
-	if (!duplicado)
-		return (NULL);
-	ft_strcpy(duplicado, s);
-	return (duplicado);
+	len = 0;
+	while (str[len] != '\0')
+		len++;
+	return (len);
 }
+
+char	*ft_strcat(char *dest, char *src)
+{
+	int	i;
+	int	j;
+
+	i = ft_strlen(dest);
+	j = 0;
+	while (src[j] != '\0')
+	{
+		dest[i] = src [j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+/*
+int main()
+{
+    char src[] = "hola ";
+    char dest[] = "mundo";
+    printf("%s",ft_strcat(src, dest));
+
+    return 0;
+}*/

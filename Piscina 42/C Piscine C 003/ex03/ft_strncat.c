@@ -1,35 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 18:43:29 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/15 20:52:37 by rmarrero         ###   ########.fr       */
+/*   Created: 2024/08/19 17:34:19 by rmarrero          #+#    #+#             */
+/*   Updated: 2024/08/26 16:07:41 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include <stdio.h>
 
-size_t	ft_strlcat(char *dest, char *src, unsigned int size)
+int	ft_strlen(char *str)
+{
+	int	len;
+
+	len = 0;
+	while (str[len] != '\0')
+		len++;
+	return (len);
+}
+
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int	i;
 	unsigned int	j;
-	unsigned int	dlen;
-	unsigned int	slen;
 
-	i = 0;
+	i = ft_strlen(dest);
 	j = 0;
-	dlen = ft_strlen(dest);
-	slen = ft_strlen(src);
-	if (size == 0 || size <= dlen)
-		return (slen + size);
-	while (src [i] != '\0' && i < size - dlen - 1)
+	while (j < nb && src[j] != '\0')
 	{
-		dest[j] = src[i];
-		i++;
+		dest[i + j] = src[j];
 		j++;
 	}
-	dest[j] = '\0';
-	return (dlen + slen);
+	dest[i + j] = '\0';
+	return (dest);
 }
+/*
+int main()
+{
+    char v1[] = "la mundo mundo";
+    char v2[20] = "ho";
+
+	printf("%s", ft_strncat(v2,v1,8));
+
+	return 0;
+}
+*/

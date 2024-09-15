@@ -5,17 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/12 17:36:43 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/12 17:37:24 by rmarrero         ###   ########.fr       */
+/*   Created: 2024/08/22 13:53:12 by rmarrero          #+#    #+#             */
+/*   Updated: 2024/08/30 05:09:35 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	strlen(const char *str)
+int	ft_strlen(char *str)
 {
-	int	length;
+	int	len;
 
-	length = 0;
-	while (str[length])
-		length++;
-	return (length);
+	len = 0;
+	while (str[len] != '\0')
+		len++;
+	return (len);
 }
