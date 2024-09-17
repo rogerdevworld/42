@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/13 12:40:32 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/17 12:22:24 by rmarrero         ###   ########.fr       */
+/*   Created: 2024/09/17 07:32:01 by rmarrero          #+#    #+#             */
+/*   Updated: 2024/09/17 08:11:45 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 #include <stdio.h>
 
-char	*ft_strchr(const char *s, int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	const unsigned char	*local_s;
 	size_t	i;
 
 	i = 0;
-	local_s = (const unsigned char *)s;
-	while (local_s[i])
+	while (n > i && (s1[i] || s2[i]))
 	{
-		if (local_s[i] == (unsigned char)c)
-			return ((char *)&s[i]);
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		i++;
 	}
-	if ((unsigned char)s[i] == (unsigned char)c)
-		return ((char *)&s[i]);
-	return (NULL);
+	return (0);
 }
-
-int	main(void)
+/*
+int main(void)
 {
-    char str[] = "hola mundo new world";
-    char c = 'u';
-
-    printf("%s", ft_strchr(str, c));
-    return 0;
-}
+	char	str1[] = "abcav";
+	char	str2[] = "abca";
+	printf("%i", ft_strncmp(str1, str2, 4));
+	return 0;
+}*/

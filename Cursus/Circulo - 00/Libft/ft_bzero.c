@@ -6,7 +6,7 @@
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 18:38:10 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/13 15:24:28 by rmarrero         ###   ########.fr       */
+/*   Updated: 2024/09/16 23:57:48 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -14,13 +14,23 @@
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
-	char	*str;
+	unsigned char	*str;
 
-	str = (char *)s;
+	str = (unsigned char *)s;
 	i = 0;
 	while (i < n)
 	{
-		str[i] = 0;
+		str[i] = '\0';
 		i++;
 	}
 }
+
+int main(void)
+{
+	char str[] = "hola";
+
+	printf("antes: %s", str);
+	ft_bzero(str, 2);
+	printf("despues %s",str);
+       return 0;
+}       

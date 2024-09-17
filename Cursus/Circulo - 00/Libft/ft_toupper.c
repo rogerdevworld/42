@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/12 18:22:10 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/17 00:02:32 by rmarrero         ###   ########.fr       */
+/*   Created: 2024/09/17 08:12:23 by rmarrero          #+#    #+#             */
+/*   Updated: 2024/09/17 08:24:46 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_toupper(int c)
 {
-	size_t			i;
-	unsigned char	*local_s;
+	unsigned char local_c;
 
-	local_s = (unsigned char *)s;
-	i = 0;
-	while (i < n)
+	local_c = (unsigned char)c;
+	if (c >= 'a' && c <= 'z')
+		return (c -= 32);
+	return (c);
+}
+
+int main(void)
+{
+	char	str[] = "hola";
+	int 	i = 0;
+	while (str[i])
 	{
-		local_s[i] = (unsigned char)c;
+		printf("%c", ft_toupper(str[i]));
 		i++;
 	}
-	return (s);
 }
-/*
-int 	main(void)
-{
-	char str[] = "hola";
-	printf("antes: %s\n", str);
-	ft_memset(str, 1, 2);
-	printf("despues: %s\n", str);
-}
-*/		

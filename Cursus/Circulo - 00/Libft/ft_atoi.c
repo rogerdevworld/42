@@ -6,34 +6,74 @@
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 18:38:41 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/12 17:32:02 by rmarrero         ###   ########.fr       */
+/*   Updated: 2024/09/17 12:19:36 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *nptr)
 {
-	int		sign;
+	int	result;
 	size_t	i;
-	int		result;
+	int	sing;
 
+	sing = 1;
 	i = 0;
-	sign = 1;
 	result = 0;
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+	while (nptr[i] == 32 || (nptr[i] >= 9 && nptr[i] <= 13))
 		i++;
-	if (str[i] == '-')
+	if (nptr[i] == '-')
 	{
-		sign = -1;
+		sing = -1;
 		i++;
 	}
-	else if (str[i] == '+')
+	else if (nptr[i] == '+')
 		i++;
-	while (ft_isdigit(str[i]))
+	while (ft_isdigit(nptr[i]))
 	{
-		result *= 10;
-		result += str[i] - '0';
+		result = result * 10 + (nptr[i] - '0');
 		i++;
 	}
-	return (result * sign);
+	return (result * sing);
 }
+
+/*
+void test_comparison(const char *str) {
+    int result_ft = ft_atoi(str);
+    int result_std = atoi(str);
+
+    printf("Input: \"%s\"\n", str);
+    printf("ft_atoi result: %d\n", result_ft);
+    printf("atoi result: %d\n", result_std);
+
+    if (result_ft == result_std) {
+        printf("PASSED: Both results are the same.\n");
+    } else {
+        printf("FAILED: Results are different.\n");
+    }
+    printf("--------\n");
+}
+
+int main() {
+    test_comparison("123");
+    test_comparison("-456");
+    test_comparison("0");
+    test_comparison("   789");
+    test_comparison("   -234");
+    test_comparison("12abc34");
+    test_comparison("abc123");
+    test_comparison("");
+    test_comparison(" ");
+    test_comparison("+");
+    test_comparison("-");
+    test_comparison("2147483648");
+    test_comparison("2147483649");
+    test_comparison("-2147483627172");
+    test_comparison("-2147483649");
+    test_comparison("----2147483648");
+    test_comparison("-+2147483649");
+
+    return 0;
+}*/
