@@ -6,7 +6,7 @@
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 12:40:32 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/17 12:22:24 by rmarrero         ###   ########.fr       */
+/*   Updated: 2024/09/18 06:39:35 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,7 +15,7 @@
 char	*ft_strchr(const char *s, int c)
 {
 	const unsigned char	*local_s;
-	size_t	i;
+	size_t				i;
 
 	i = 0;
 	local_s = (const unsigned char *)s;
@@ -29,7 +29,7 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&s[i]);
 	return (NULL);
 }
-
+/*
 int	main(void)
 {
     char str[] = "hola mundo new world";
@@ -37,4 +37,4 @@ int	main(void)
 
     printf("%s", ft_strchr(str, c));
     return 0;
-}
+}*/

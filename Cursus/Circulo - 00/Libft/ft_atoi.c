@@ -6,7 +6,7 @@
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 18:38:41 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/17 12:19:36 by rmarrero         ###   ########.fr       */
+/*   Updated: 2024/09/18 06:44:35 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,9 +15,9 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int	result;
+	int		result;
 	size_t	i;
-	int	sing;
+	int		sing;
 
 	sing = 1;
 	i = 0;

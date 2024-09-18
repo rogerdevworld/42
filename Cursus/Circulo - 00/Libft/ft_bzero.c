@@ -6,14 +6,14 @@
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 18:38:10 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/16 23:57:48 by rmarrero         ###   ########.fr       */
+/*   Updated: 2024/09/18 06:42:08 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*str;
 
 	str = (unsigned char *)s;
@@ -24,7 +24,7 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-
+/*
 int main(void)
 {
 	char str[] = "hola";
@@ -33,4 +33,4 @@ int main(void)
 	ft_bzero(str, 2);
 	printf("despues %s",str);
        return 0;
-}       
+}*/

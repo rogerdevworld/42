@@ -6,14 +6,14 @@
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 04:41:55 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/18 05:51:39 by rmarrero         ###   ########.fr       */
+/*   Updated: 2024/09/18 06:43:43 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <string.h>
+
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	size_t				i;
 	const unsigned char	*local_s1;
 	const unsigned char	*local_s2;
 
@@ -28,7 +28,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
+/*
 int	main(void)
 {
 	char s1[]= "\0";
@@ -36,4 +36,4 @@ int	main(void)
 	printf("ft_ : %i\n", ft_memcmp(s1, s2, 6));
 	printf("original: %i\n", memcmp(s1, s2, 6));
 	return 0;
-}
+}*/

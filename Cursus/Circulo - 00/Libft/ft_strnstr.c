@@ -6,7 +6,7 @@
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 23:29:06 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/18 03:10:42 by rmarrero         ###   ########.fr       */
+/*   Updated: 2024/09/18 06:40:26 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -32,11 +32,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-
+/*
 int main(void) {
     char big[] = "Hola mundo texto  nuevo";
     char littel[] = "texto";
     printf("%s\n", ft_strnstr(big, littel, 25));
     return 0;
 }
-	
+*/	
