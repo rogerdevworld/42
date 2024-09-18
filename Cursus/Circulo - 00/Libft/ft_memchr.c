@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/13 12:40:32 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/18 06:39:35 by rmarrero         ###   ########.fr       */
+/*   Created: 2024/09/18 06:59:23 by rmarrero          #+#    #+#             */
+/*   Updated: 2024/09/18 07:22:06 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
+	size_t	i;
 	const unsigned char	*local_s;
-	size_t				i;
 
 	i = 0;
-	local_s = (const unsigned char *)s;
+	local_s = (const unsigned char	*)s;
 	while (local_s[i])
 	{
 		if (local_s[i] == (unsigned char)c)
-			return ((char *)&s[i]);
+			return ((char *)&local_s[i]);
 		i++;
 	}
-	if ((unsigned char)s[i] == (unsigned char)c)
-		return ((char *)&s[i]);
+	if ((unsigned char)local_s[i] == (unsigned char)c)
+		return ((char *)&local_s[i]);
 	return (NULL);
-}
-/*
-int	main(void)
-{
-    char str[] = "hola mundo new world";
-    char c = 'u';
 
-    printf("%s", ft_strchr(str, c));
-    return 0;
-}*/
