@@ -11,19 +11,20 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_strlen(const char *str);
-
-char	*ft_strcpy(char *dest, char *src);
-
-char	*ft_strdup(const char *s, size_t n)
+char	*ft_strdup(const char *s1)
 {
-	size_t	len;
+	size_t	i;
 	char	*duplicado;
 
-	len = ft_strlen(src);
-	duplicado = (char *)malloc((len + 1) * sizeof(char));
+	i = 0;
+	duplicado = (char *)malloc((ft_strlen(s1) + 1) * sizeof(char));
 	if (!duplicado)
 		return (NULL);
-	ft_strcpy(duplicado, s);
+	while (s1[i])
+	{
+		duplicado[i] = s1[i];
+		i++;
+	}
+	duplicado[i] = '\0';
 	return (duplicado);
 }
