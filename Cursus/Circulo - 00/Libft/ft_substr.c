@@ -6,24 +6,28 @@
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 19:06:56 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/18 19:26:15 by rmarrero         ###   ########.fr       */
+/*   Updated: 2024/09/23 16:50:42 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
+//#include <stdio.h>
+//#include <stdlib.h>
 
+/*
 void    ft_bzero(void *s, size_t n);
 size_t  ft_strlen(const char *str);
 char    *ft_strdup(const char *s1);
 void    *ft_calloc(size_t count, size_t size);
+*/
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	char	*pointer;
 	if (!s)
+	{
 		return (NULL);
+	}
 	if (start > ft_strlen(s))
 		return (ft_strdup(""));
 	if (len > ft_strlen(s + start))
@@ -39,7 +43,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	return (pointer);
 }
-
+/*
 int	main(void)
 {
 	char s[] = "Hi new world, new testing text for this function.";
@@ -87,6 +91,7 @@ char    *ft_strdup(const char *s1)
         duplicado[i] = '\0';
         return (duplicado);
 }
+
 void    *ft_calloc(size_t count, size_t size)
 {
         size_t                  i;
@@ -99,3 +104,4 @@ void    *ft_calloc(size_t count, size_t size)
         ft_bzero(pointer, count * size);
         return (pointer);
 }
+*/
