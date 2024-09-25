@@ -17,20 +17,13 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char		*local_dest;
 	const unsigned char	*local_src;
 
-	local_dest = (unsigned char *)dest;
-	local_src = (const unsigned char *)src;
 	if (!dest || !src)
 		return (NULL);
-	if (local_dest == local_src)
-		return (dest);
+	local_dest = (unsigned char *)dest;
+	local_src = (const unsigned char *)src;
 	if (local_dest < local_src)
 	{
-		i = 0;
-		while (i < n)
-		{
-			local_dest[i] = local_src[i];
-			i++;
-		}
+		ft_memcpy(dest,src,n);
 	}
 	else
 	{

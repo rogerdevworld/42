@@ -36,7 +36,6 @@ int	ft_atoi(const char *nptr)
 	}
 	return (result * sing);
 }
-
 /*
 void test_comparison(const char *str) {
     int result_ft = ft_atoi(str);
