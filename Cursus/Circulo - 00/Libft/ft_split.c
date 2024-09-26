@@ -6,10 +6,11 @@
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 13:18:29 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/19 16:25:01 by rmarrero         ###   ########.fr       */
+/*   Updated: 2024/09/26 13:22:53 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
 /*
 #include <stdlib.h>
 #include <stdio.h>
@@ -25,32 +26,33 @@ void    *ft_memcpy(void *dest, const void *src, size_t n);
 */
 char	**ft_split(char const *s, char character)
 {
-	int	words;
-	char **result;
-	int i;
+	int		words;
+	char	**result;
+	int		i;
 
-    if (!s)
-        return (NULL);
-    words = ft_count(s, character);
-    result = (char **)malloc((words + 1) * sizeof(char *));
-    if (!result)
-        return (NULL);
-    i = 0;
-    while (*s) {
-        if (*s != character)
+	if (!s)
+		return (NULL);
+	words = ft_count(s, character);
+	result = (char **)malloc((words + 1) * sizeof(char *));
+	if (!result)
+		return (NULL);
+	i = 0;
+	while (*s)
+	{
+		if (*s != character)
 		{
-            result[i++] = ft_save_word(s, character);
-            while (*s && *s != character)
-                s++;
-        }
+			result[i++] = ft_save_word(s, character);
+			while (*s && *s != character)
+				s++;
+		}
 		else
 		{
-            while (*s && *s == character)
-                s++;
-        }
-    }
-    result[i] = NULL;
-    return (result);
+			while (*s && *s == character)
+				s++;
+		}
+	}
+	result[i] = NULL;
+	return (result);
 }
 /*
 int main() {
@@ -75,40 +77,45 @@ int main() {
 
     return 0;
 }
+*/
 
-static int		ft_count(char const *s, char character) {
-    int count;
-	int word;
+static int	ft_count(char const *s, char character)
+{
+	int	count;
+	int	word;
 
 	count = 0;
 	word = 0;
-    while (*s) {
-        if (*s != character && word == 0) {
-            word = 1;
-            count++;
-        } else if (*s == character)
-            word = 0;
-        s++;
-    }
-    return (count);
+	while (*s)
+	{
+		if (*s != character && word == 0)
+		{
+			word = 1;
+			count++;
+		}
+		else if (*s == character)
+			word = 0;
+		s++;
+	}
+	return (count);
 }
 
 static char	*ft_save_word(char const *s, char character)
 {
-    int len;
-    char *word;
+	int		len;
+	char	*word;
 
 	len = 0;
-    while (s[len] && s[len] != character)
-        len++;
-    word = (char *)malloc((len + 1) * sizeof(char));
-    if (!word)
-        return (NULL);
-    ft_memcpy(word, s, len);
+	while (s[len] && s[len] != character)
+		len++;
+	word = (char *)malloc((len + 1) * sizeof(char));
+	if (!word)
+		return (NULL);
+	ft_memcpy(word, s, len);
 	word[len] = 0;
-    return (word);
+	return (word);
 }
-
+/*
 void    *ft_calloc(size_t count, size_t size)
 {
         size_t                  i;

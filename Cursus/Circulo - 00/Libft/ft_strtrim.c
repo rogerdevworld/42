@@ -5,35 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 13:08:03 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/19 13:15:12 by rmarrero         ###   ########.fr       */
+/*   Created: 2024/09/26 12:26:57 by rmarrero          #+#    #+#             */
+/*   Updated: 2024/09/26 13:31:11 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-char    *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-    if (!s1 || !set)
-        return (NULL);
-    size_t i = 0;
-    size_t j = ft_strlen(s1);
-    char *str;
+	size_t	i;
+	size_t	j;
+	size_t	k;
+	char	*str;
 
-    while (s1[i] && ft_strchr(set, s1[i]))
-        i++;
-    while (j > i && ft_strchr(set, s1[j - 1]))
-        j--;
-    str = (char *)malloc((j - i + 1) * sizeof(char));
-    if (!str)
-        return NULL;
-    size_t k = 0;
-    while (k < (j - i))
-    {
-        str[k] = s1[i + k];
-        k++;
-    }
-    str[k] = '\0';
-    return str;
+	if (!s1 || !set)
+		return (NULL);
+	i = 0;
+	j = ft_strlen(s1);
+	while (s1[i] && ft_strchr(set, s1[i]))
+		i++;
+	while (j > i && ft_strchr(set, s1[j - 1]))
+		j--;
+	str = (char *)malloc((j - i + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	k = 0;
+	while (k < (j - i))
+	{
+		str[k] = s1[i + k];
+		k++;
+	}
+	str[k] = '\0';
+	return (str);
 }
 /*
 int main()
