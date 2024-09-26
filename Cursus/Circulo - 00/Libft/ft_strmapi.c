@@ -6,7 +6,7 @@
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 13:34:07 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/26 13:35:00 by rmarrero         ###   ########.fr       */
+/*   Updated: 2024/09/26 14:57:36 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	while (s[i])
