@@ -1,74 +1,46 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 13:18:29 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/26 13:22:53 by rmarrero         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-#include "libft.h"
-
-/*
 #include <stdlib.h>
 #include <stdio.h>
 
 //funciones internas
-static int		ft_count(char const *s, char character);
-static char	*ft_save_word(char const *s, char character);
+static int              ft_count(char const *s, char character);
+static char     *ft_save_word(char const *s, char character);
+static void    ft_free_split(char **result, int words);
+static char    **ft_process_split(char const *s, char character, char **result);
 
 //funciones de libft
 void    *ft_calloc(size_t count, size_t size);
 void    ft_bzero(void *s, size_t n);
 void    *ft_memcpy(void *dest, const void *src, size_t n);
-*/
-char	**ft_split(char const *s, char character)
-{
-	int		words;
-	char	**result;
-	int		i;
 
-	if (!s)
-		return (NULL);
-	words = ft_count(s, character);
-	result = (char **)malloc((words + 1) * sizeof(char *));
-	if (!result)
-		return (NULL);
-	i = 0;
-	while (*s)
-	{
-		if (*s != character)
-		{
-			result[i++] = ft_save_word(s, character);
-			while (*s && *s != character)
-				s++;
-		}
-		else
-		{
-			while (*s && *s == character)
-				s++;
-		}
-	}
-	result[i] = NULL;
-	return (result);
+
+char    **ft_split(char const *s, char character)
+{
+    int words;
+    char **result;
+
+    if (!s)
+        return (NULL);
+    words = ft_count(s, character);
+    result = (char **)malloc((words + 1) * sizeof(char *));
+    if (!result)
+        return (NULL);
+    return (ft_process_split(s, character, result));
 }
-/*
+
 int main() {
-	int	i = 0;
+        int     i = 0;
     char str[] = "test de la funcion split 123 456 789 0";
     char character = ' ';
     char **result;
-    
+
     result = ft_split(str, character);
-    
+
     if (result) {
         while (result[i])
-		{
+                {
             printf("Palabra %d: %s\n", i + 1, result[i]);
             free(result[i]);
-			i++;
+                        i++;
         }
         free(result);
     } else {
@@ -77,45 +49,86 @@ int main() {
 
     return 0;
 }
-*/
 
-static int	ft_count(char const *s, char character)
+void    ft_free_split(char **result, int words)
 {
-	int	count;
-	int	word;
+    int i;
 
-	count = 0;
-	word = 0;
-	while (*s)
-	{
-		if (*s != character && word == 0)
-		{
-			word = 1;
-			count++;
-		}
-		else if (*s == character)
-			word = 0;
-		s++;
-	}
-	return (count);
+    i = 0;
+    while (i < words)
+    {
+        free(result[i]);
+        i++;
+    }
+    free(result);
 }
 
-static char	*ft_save_word(char const *s, char character)
+char    **ft_process_split(char const *s, char character, char **result)
 {
-	int		len;
-	char	*word;
+    int i;
 
-	len = 0;
-	while (s[len] && s[len] != character)
-		len++;
-	word = (char *)malloc((len + 1) * sizeof(char));
-	if (!word)
-		return (NULL);
-	ft_memcpy(word, s, len);
-	word[len] = 0;
-	return (word);
+    i = 0;
+    while (*s)
+    {
+        if (*s != character)
+        {
+            result[i] = ft_save_word(s, character);
+            if (!result[i])
+            {
+                ft_free_split(result, i);
+                return (NULL);
+            }
+            i++;
+            while (*s && *s != character)
+                s++;
+        }
+        else
+        {
+            while (*s && *s == character)
+                s++;
+        }
+    }
+    result[i] = NULL;
+    return (result);
 }
-/*
+
+static int      ft_count(char const *s, char character)
+{
+        int     count;
+        int     word;
+
+        count = 0;
+        word = 0;
+        while (*s)
+        {
+                if (*s != character && word == 0)
+                {
+                        word = 1;
+                        count++;
+                }
+                else if (*s == character)
+                        word = 0;
+                s++;
+        }
+        return (count);
+}
+
+static char     *ft_save_word(char const *s, char character)
+{
+        int             len;
+        char    *word;
+
+        len = 0;
+        while (s[len] && s[len] != character)
+                len++;
+        word = (char *)malloc((len + 1) * sizeof(char));
+        if (!word)
+                return (NULL);
+        ft_memcpy(word, s, len);
+        word[len] = 0;
+        return (word);
+}
+
 void    *ft_calloc(size_t count, size_t size)
 {
         size_t                  i;
@@ -158,4 +171,3 @@ void    *ft_memcpy(void *dest, const void *src, size_t n)
         }
         return (dest);
 }
-*/

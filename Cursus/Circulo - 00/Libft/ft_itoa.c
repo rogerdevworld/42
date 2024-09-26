@@ -10,61 +10,58 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <stdlib.h>
+#include <stdio.h>
 
-static int	int_len(long nbr);
-
-char	*ft_itoa(int n)
+static int int_len(long nbr)
 {
-	int		len;
-	int		i;
-	char	*result;
-	long	nbr;
-
-	nbr = n;
-	len = int_len(nbr);
-	result = malloc((len + 1) * sizeof(char));
-	if (!result)
-		return (NULL);
-	i = len - 1;
-	if (nbr == 0)
-		result[0] = '0';
-	else
-	{
-		if (nbr < 0)
-			nbr = -nbr;
-		while (nbr != 0)
-		{
-			result[i] = ((nbr % 10) + '0');
-			nbr = nbr / 10;
-			i--;
-		}
-		if (n < 0)
-			result[0] = '-';
-	}
-	result[len] = '\0';
-	return (result);
+    int len = (nbr <= 0) ? 1 : 0;
+    
+    while (nbr != 0)
+    {
+        nbr /= 10;
+        len++;
+    }
+    return len;
 }
 
-static int	int_len(long nbr)
+static void fill_result(long nbr, char *result, int len, int is_negative)
 {
-	int	count;
-
-	count = 0;
-	if (nbr < 0)
-	{
-		count++;
-		nbr = -nbr;
-	}
-	if (nbr == 0)
-		count++;
-	while (nbr != 0)
-	{
-		nbr /= 10;
-		count++;
-	}
-	return (count);
+    int i;
+    
+    i = len - 1;
+    if (nbr == 0)
+        result[0] = '0';
+    else
+    {
+        if (is_negative)
+            nbr = -nbr;
+        while (nbr != 0)
+        {
+            result[i] = ((nbr % 10) + '0');
+            nbr = nbr / 10;
+            i--;
+        }
+        if (is_negative)
+            result[0] = '-';
+    }
 }
-/*
+
+char *ft_itoa(int n)
+{
+    int len;
+    char *result;
+    long nbr;
+    
+    nbr = n;
+    len = int_len(nbr);
+    result = malloc((len + 1) * sizeof(char));
+    if (!result)
+        return (NULL);
+    fill_result(nbr, result, len, n < 0);
+    result[len] = '\0';
+    return (result);
+}
 int main(void)
 {
     int i = 0;
@@ -87,4 +84,3 @@ int main(void)
     }
     return 0;
 }
-*/
