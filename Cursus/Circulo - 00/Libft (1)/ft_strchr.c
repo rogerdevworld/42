@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 13:34:07 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/26 14:57:36 by rmarrero         ###   ########.fr       */
+/*   Created: 2024/09/13 12:40:32 by rmarrero          #+#    #+#             */
+/*   Updated: 2024/09/18 06:39:35 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned int	i;
-	char    result;
+	const unsigned char	*local_s;
+	size_t				i;
 
 	i = 0;
-	while (s[i])
+	local_s = (const unsigned char *)s;
+	while (local_s[i])
 	{
-		result[i] = (*f)(i, &s[i]);
+		if (local_s[i] == (unsigned char)c)
+			return ((char *)&s[i]);
 		i++;
 	}
-	return (result);
+	if ((unsigned char)s[i] == (unsigned char)c)
+		return ((char *)&s[i]);
+	return (NULL);
 }
+/*
+int	main(void)
+{
+    char str[] = "hola mundo new world";
+    char c = 'u';
+
+    printf("%s", ft_strchr(str, c));
+    return 0;
+}*/

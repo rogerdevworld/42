@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 13:34:07 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/26 14:57:36 by rmarrero         ###   ########.fr       */
+/*   Created: 2024/09/18 04:41:55 by rmarrero          #+#    #+#             */
+/*   Updated: 2024/09/18 06:43:43 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned int	i;
-	char    result;
+	size_t				i;
+	const unsigned char	*local_s1;
+	const unsigned char	*local_s2;
 
 	i = 0;
-	while (s[i])
+	local_s1 = s1;
+	local_s2 = s2;
+	while (i < n)
 	{
-		result[i] = (*f)(i, &s[i]);
+		if (local_s1[i] != local_s2[i])
+			return (local_s1[i] - local_s2[i]);
 		i++;
 	}
-	return (result);
+	return (0);
 }
+/*
+int	main(void)
+{
+	char s1[]= "\0";
+	char s2[]= "";
+	printf("ft_ : %i\n", ft_memcmp(s1, s2, 6));
+	printf("original: %i\n", memcmp(s1, s2, 6));
+	return 0;
+}*/

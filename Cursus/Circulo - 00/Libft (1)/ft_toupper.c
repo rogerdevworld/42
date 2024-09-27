@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 13:34:07 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/26 14:57:36 by rmarrero         ###   ########.fr       */
+/*   Created: 2024/09/17 08:12:23 by rmarrero          #+#    #+#             */
+/*   Updated: 2024/09/18 06:32:54 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int	ft_toupper(int c)
 {
-	unsigned int	i;
-	char    result;
+	unsigned char	local_c;
 
-	i = 0;
-	while (s[i])
+	local_c = (unsigned char)c;
+	if (c >= 'a' && c <= 'z')
+		return (c -= 32);
+	return (c);
+}
+/*
+int main(void)
+{
+	char	str[] = "hola";
+	int 	i = 0;
+	while (str[i])
 	{
-		result[i] = (*f)(i, &s[i]);
+		printf("%c", ft_toupper(str[i]));
 		i++;
 	}
-	return (result);
-}
+}*/

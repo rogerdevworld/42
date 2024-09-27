@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 13:34:07 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/26 14:57:36 by rmarrero         ###   ########.fr       */
+/*   Created: 2024/09/12 18:22:10 by rmarrero          #+#    #+#             */
+/*   Updated: 2024/09/17 00:02:32 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned int	i;
-	char    result;
+	size_t			i;
+	unsigned char	*local_s;
 
+	local_s = (unsigned char *)s;
 	i = 0;
-	while (s[i])
+	while (i < n)
 	{
-		result[i] = (*f)(i, &s[i]);
+		local_s[i] = (unsigned char)c;
 		i++;
 	}
-	return (result);
+	return (s);
 }
+/*
+int 	main(void)
+{
+	char str[] = "hola";
+	printf("antes: %s\n", str);
+	ft_memset(str, 1, 2);
+	printf("despues: %s\n", str);
+}
+*/		

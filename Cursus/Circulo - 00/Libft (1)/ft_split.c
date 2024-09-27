@@ -5,30 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/27 13:13:54 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/27 13:32:22 by rmarrero         ###   ########.fr       */
+/*   Created: 2024/09/19 13:18:29 by rmarrero          #+#    #+#             */
+/*   Updated: 2024/09/26 13:22:53 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
+/*
 #include <stdlib.h>
 #include <stdio.h>
 
 //funciones internas
-static int	ft_count(char const *s, char character);
+static int		ft_count(char const *s, char character);
 static char	*ft_save_word(char const *s, char character);
-static void	ft_free_split(char **result, int words);
-static char	**ft_process_split(char const *s, char character, char **result);
-/*
+
 //funciones de libft
 void    *ft_calloc(size_t count, size_t size);
 void    ft_bzero(void *s, size_t n);
 void    *ft_memcpy(void *dest, const void *src, size_t n);
 */
-
 char	**ft_split(char const *s, char character)
 {
 	int		words;
 	char	**result;
+	int		i;
 
 	if (!s)
 		return (NULL);
@@ -36,62 +36,12 @@ char	**ft_split(char const *s, char character)
 	result = (char **)malloc((words + 1) * sizeof(char *));
 	if (!result)
 		return (NULL);
-	return (ft_process_split(s, character, result));
-}
-/*
-int main() {
-        int     i = 0;
-    char str[] = "test de la funcion split 123 456 789 0";
-    char character = ' ';
-    char **result;
-
-    result = ft_split(str, character);
-
-    if (result) {
-        while (result[i])
-                {
-            printf("Palabra %d: %s\n", i + 1, result[i]);
-            free(result[i]);
-                        i++;
-        }
-        free(result);
-    } else {
-        printf("Error\n");
-    }
-
-    return 0;
-}
-*/
-
-static void	ft_free_split(char **result, int words)
-{
-	int	i;
-
-	i = 0;
-	while (i < words)
-	{
-		free(result[i]);
-		i++;
-	}
-	free(result);
-}
-
-char	**ft_process_split(char const *s, char character, char **result)
-{
-	int	i;
-
 	i = 0;
 	while (*s)
 	{
 		if (*s != character)
 		{
-			result[i] = ft_save_word(s, character);
-			if (!result[i])
-			{
-				ft_free_split(result, i);
-				return (NULL);
-			}
-			i++;
+			result[i++] = ft_save_word(s, character);
 			while (*s && *s != character)
 				s++;
 		}
@@ -104,6 +54,30 @@ char	**ft_process_split(char const *s, char character, char **result)
 	result[i] = NULL;
 	return (result);
 }
+/*
+int main() {
+	int	i = 0;
+    char str[] = "test de la funcion split 123 456 789 0";
+    char character = ' ';
+    char **result;
+    
+    result = ft_split(str, character);
+    
+    if (result) {
+        while (result[i])
+		{
+            printf("Palabra %d: %s\n", i + 1, result[i]);
+            free(result[i]);
+			i++;
+        }
+        free(result);
+    } else {
+        printf("Error\n");
+    }
+
+    return 0;
+}
+*/
 
 static int	ft_count(char const *s, char character)
 {
@@ -183,4 +157,5 @@ void    *ft_memcpy(void *dest, const void *src, size_t n)
                 i++;
         }
         return (dest);
-}*/
+}
+*/

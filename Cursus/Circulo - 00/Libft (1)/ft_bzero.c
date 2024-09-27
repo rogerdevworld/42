@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 13:34:07 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/26 14:57:36 by rmarrero         ###   ########.fr       */
+/*   Created: 2024/09/11 18:38:10 by rmarrero          #+#    #+#             */
+/*   Updated: 2024/09/18 06:42:08 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned int	i;
-	char    result;
+	size_t			i;
+	unsigned char	*str;
 
+	str = (unsigned char *)s;
 	i = 0;
-	while (s[i])
+	while (i < n)
 	{
-		result[i] = (*f)(i, &s[i]);
+		str[i] = '\0';
 		i++;
 	}
-	return (result);
 }
+/*
+int main(void)
+{
+	char str[] = "hola";
+
+	printf("antes: %s", str);
+	ft_bzero(str, 2);
+	printf("despues %s",str);
+       return 0;
+}*/

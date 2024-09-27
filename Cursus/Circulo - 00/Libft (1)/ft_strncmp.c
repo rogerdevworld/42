@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 13:34:07 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/26 14:57:36 by rmarrero         ###   ########.fr       */
+/*   Created: 2024/09/17 07:32:01 by rmarrero          #+#    #+#             */
+/*   Updated: 2024/09/26 17:21:37 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	i;
-	char    result;
+	size_t	i;
 
 	i = 0;
-	while (s[i])
+	while (n > i && (s1[i] || s2[i]))
 	{
-		result[i] = (*f)(i, &s[i]);
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		i++;
 	}
-	return (result);
+	return (0);
 }
+/*
+#include <string.h>
+
+int main(void)
+{
+	char	*str1 = "";
+	char	str2[] = "abca";
+	printf("%i\n", strncmp(str1, str2, 4));
+	printf("%i\n", ft_strncmp(str1, str2, 4));
+	return 0;
+}*/

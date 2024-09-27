@@ -6,7 +6,7 @@
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 06:48:32 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/27 13:42:57 by rmarrero         ###   ########.fr       */
+/*   Updated: 2024/09/26 15:59:12 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -29,3 +29,15 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+/*
+#include <string.h>
+
+int main (void)
+{
+	char hola[] = "a ";
+	char *adios = "byedasdjasbdjabns";
+
+	printf ("result -> %s\n", (char *)memmove(hola, adios, 4));	
+	printf ("result -> %s\n", (char *)ft_memmove(hola, adios, 4));	
+	return (0);
+}*/

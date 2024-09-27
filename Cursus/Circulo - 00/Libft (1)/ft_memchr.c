@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 13:34:07 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/26 14:57:36 by rmarrero         ###   ########.fr       */
+/*   Created: 2024/09/18 06:59:23 by rmarrero          #+#    #+#             */
+/*   Updated: 2024/09/26 12:43:30 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned int	i;
-	char    result;
+	size_t				i;
+	const unsigned char	*local_s;
 
 	i = 0;
-	while (s[i])
+	local_s = (const unsigned char *)s;
+	while (local_s[i])
 	{
-		result[i] = (*f)(i, &s[i]);
+		if (local_s[i] == (unsigned char)c)
+			return ((char *)&local_s[i]);
 		i++;
 	}
-	return (result);
+	if ((unsigned char)local_s[i] == (unsigned char)c)
+		return ((char *)&local_s[i]);
+	return (NULL);
 }

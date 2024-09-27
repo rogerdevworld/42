@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 13:34:07 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/26 14:57:36 by rmarrero         ###   ########.fr       */
+/*   Created: 2024/09/18 06:17:42 by rmarrero          #+#    #+#             */
+/*   Updated: 2024/09/26 12:45:20 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	*ft_calloc(size_t count, size_t size)
 {
-	unsigned int	i;
-	char    result;
+	size_t			i;
+	unsigned char	*pointer;
 
 	i = 0;
-	while (s[i])
-	{
-		result[i] = (*f)(i, &s[i]);
-		i++;
-	}
-	return (result);
+	pointer = malloc(count * size);
+	if (!pointer)
+		return (NULL);
+	ft_bzero(pointer, count * size);
+	return (pointer);
 }

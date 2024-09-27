@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 13:34:07 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/26 14:57:36 by rmarrero         ###   ########.fr       */
+/*   Created: 2024/09/17 08:25:40 by rmarrero          #+#    #+#             */
+/*   Updated: 2024/09/18 06:32:03 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int	ft_tolower(int c)
 {
-	unsigned int	i;
-	char    result;
+	unsigned char	local_c;
 
-	i = 0;
-	while (s[i])
+	local_c = (unsigned char)c;
+	while (local_c >= 'A' && local_c <= 'Z')
+		return (c += 32);
+	return (c);
+}
+/*
+int main(void)
+{
+	char str[] = "HOLA MUNDO";
+	int i = 0;
+
+	while (str[i])
 	{
-		result[i] = (*f)(i, &s[i]);
+		printf("%c", ft_tolower(str[i]));
 		i++;
 	}
-	return (result);
-}
+}*/	
