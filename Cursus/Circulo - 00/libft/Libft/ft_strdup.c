@@ -16,10 +16,12 @@ char	*ft_strdup(const char *s1)
 	size_t	i;
 	char	*duplicado;
 
-	i = 0;
+	if (s1 == NULL)
+		return (NULL);
 	duplicado = (char *)malloc((ft_strlen(s1) + 1) * sizeof(char));
 	if (!duplicado)
 		return (NULL);
+	i = 0;
 	while (s1[i])
 	{
 		duplicado[i] = s1[i];

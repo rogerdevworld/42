@@ -13,13 +13,8 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
+	if (s == NULL)
+		return;
+	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);
 }

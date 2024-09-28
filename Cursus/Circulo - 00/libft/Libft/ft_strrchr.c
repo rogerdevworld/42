@@ -13,11 +13,9 @@
 
 char	*ft_strrchr(const char *str, char c)
 {
-	size_t					i;
 	const unsigned char		*local_str;
 	size_t					len;
 
-	i = 0;
 	len = ft_strlen(str);
 	local_str = (const unsigned char *)str;
 	while (len > 0)
@@ -26,8 +24,8 @@ char	*ft_strrchr(const char *str, char c)
 		if (local_str[len] == (unsigned char)c)
 			return ((char *)&local_str[len]);
 	}
-	if ((unsigned char)str[i] == (unsigned char)c)
-		return ((char *)&local_str[i]);
+	if ((unsigned char)str[len] == (unsigned char)c)
+		return ((char *)&local_str[len]);
 	return (NULL);
 }
 /*

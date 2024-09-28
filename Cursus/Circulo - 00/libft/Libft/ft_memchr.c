@@ -18,13 +18,11 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	i = 0;
 	local_s = (const unsigned char *)s;
-	while (local_s[i] && i < n)
+	while (i < n)
 	{
 		if (local_s[i] == (unsigned char)c)
-			return ((char *)&local_s[i]);
+			return ((void *)&local_s[i]);
 		i++;
-	}
-	if ((unsigned char)local_s[i] == (unsigned char)c)
-		return ((char *)&local_s[i]);
+	
 	return (NULL);
 }
