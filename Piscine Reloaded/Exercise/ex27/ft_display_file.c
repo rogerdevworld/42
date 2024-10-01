@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_display_file.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aybelhaj <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 21:26:00 by aybelhaj          #+#    #+#             */
 /*   Updated: 2024/09/11 22:24:38 by aybelhaj         ###   ########.fr       */
