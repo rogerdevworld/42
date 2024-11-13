@@ -6,7 +6,7 @@
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 04:41:55 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/18 06:43:43 by rmarrero         ###   ########.fr       */
+/*   Updated: 2024/09/28 16:30:15 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,8 +18,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	const unsigned char	*local_s2;
 
 	i = 0;
-	local_s1 = (const unsigned char	*)s1;
-	local_s2 = (const unsigned char	*)s2;
+	local_s1 = (const unsigned char *)s1;
+	local_s2 = (const unsigned char *)s2;
 	while (i < n)
 	{
 		if (local_s1[i] != local_s2[i])

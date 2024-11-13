@@ -6,8 +6,11 @@
 /*   By: rmarrero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 17:24:49 by rmarrero          #+#    #+#             */
-/*   Updated: 2024/09/26 17:26:14 by rmarrero         ###   ########.fr       */
+/*   Updated: 2024/09/27 23:02:15 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "
+#include "libft.h"
 
+int	ft_prinft(char const *, ...)
+{
+}
